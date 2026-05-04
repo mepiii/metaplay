@@ -18,8 +18,12 @@
 }
 .tab:hover  { color: var(--text); border-color: var(--accent); transform: translateY(-1px); }
 .tab.active { background: linear-gradient(135deg, #8B5CF6, #22D3EE); color: #fff; border-color: transparent; box-shadow: 0 4px 16px rgba(139,92,246,.38); }
-[data-theme="light"] .tab { background: rgba(255,255,255,.72); border-color: rgba(139,92,246,.22); }
-[data-theme="light"] .tab:hover { background: rgba(139,92,246,.10); }
+[data-theme="light"] .tab { background: rgba(255,255,255,.78); border-color: rgba(139,92,246,.28); color: #53698f; }
+[data-theme="light"] .tab:hover { background: rgba(139,92,246,.10); color: #111827; }
+[data-theme="light"] .tab.active { background: linear-gradient(135deg, #8B5CF6, #22D3EE); color: #fff; border-color: transparent; box-shadow: 0 8px 22px rgba(139,92,246,.24); }
+[data-theme="light"] .filter-select,
+[data-theme="light"] .filter-input { background: rgba(255,255,255,.78); border-color: rgba(139,92,246,.28); color: #111827; }
+[data-theme="light"] .filter-input::placeholder { color: #60739a; }
 
 .filter-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
 .filter-select {

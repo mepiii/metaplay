@@ -11,6 +11,7 @@
   align-items: center; justify-content: center;
   text-align: center; padding: 96px 24px 72px;
   background: linear-gradient(135deg, rgba(124,58,237,.18), rgba(6,182,212,.08));
+  border-radius: 44px;
   position: relative; overflow: hidden;
 }
 .hero::before {

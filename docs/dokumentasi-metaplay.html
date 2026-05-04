@@ -174,17 +174,19 @@
 </header>
 <h1 id="dokumentasi-website-metaplay">Dokumentasi website MetaPlay</h1>
 <p>Nama proyek: MetaPlay<br />
-Jenis proyek: website katalog dan review game<br />
+Jenis proyek: katalog dan review game<br />
 Bahasa: HTML, CSS, JavaScript<br />
 Penyimpanan data: localStorage browser</p>
 <h2 id="gambaran-singkat">Gambaran singkat</h2>
-<p>MetaPlay adalah website sederhana untuk melihat daftar game, membaca
-review, memberi review, dan menyimpan game ke wishlist. Website ini
-tidak memakai backend. Semua data login, review user, dan wishlist
-disimpan di browser lewat localStorage.</p>
-<p>Desainnya sekarang sengaja dibuat lebih sederhana. Efek yang terlalu
-ramai seperti sparkle, bintang animasi, dan glow yang bergerak sudah
-dikurangi supaya kode CSS lebih mudah dibaca.</p>
+<p>MetaPlay adalah website praktikum untuk mencari game, membaca review,
+menulis review, dan menyimpan game ke wishlist. Website ini tidak
+memakai backend. Data akun, wishlist, dan review user disimpan di
+browser lewat localStorage.</p>
+<p>Tampilan website sudah dibuat lebih sederhana dari versi awal. Efek
+dekoratif yang terlalu ramai dikurangi supaya halaman lebih bersih dan
+CSS lebih mudah diikuti. Bagian login, register, profil, wishlist,
+search, dan about juga sudah dirapikan agar tampilannya lebih
+konsisten.</p>
 <h2 id="struktur-file-utama">Struktur file utama</h2>
 <ul>
 <li><code>index.html</code> untuk halaman utama.</li>
@@ -196,45 +198,45 @@ dikurangi supaya kode CSS lebih mudah dibaca.</p>
 <li><code>login.html</code> dan <code>register.html</code> untuk akun
 user.</li>
 <li><code>profile.html</code> untuk profil user.</li>
-<li><code>about.html</code> untuk penjelasan proyek.</li>
+<li><code>about.html</code> untuk informasi proyek.</li>
 </ul>
-<p>CSS utama ada di <code>css/style.css</code>. CSS per halaman ada di
-folder <code>css/pages/</code>. JavaScript dipisah ke folder
-<code>js/core/</code>, <code>js/components/</code>,
-<code>js/features/</code>, dan <code>js/pages/</code>.</p>
+<p>CSS utama ada di <code>css/style.css</code>. CSS khusus halaman ada
+di <code>css/pages/</code>. JavaScript dipisah ke <code>js/core/</code>,
+<code>js/components/</code>, <code>js/features/</code>, dan
+<code>js/pages/</code>.</p>
 <h2 id="cara-mencari-bagian-kode">Cara mencari bagian kode</h2>
 <p>Di VS Code, tekan <code>Ctrl + F</code>, lalu cari kata ini:</p>
 <ul>
 <li><code>navbar</code> untuk menu atas.</li>
 <li><code>hero section</code> untuk bagian pembuka halaman utama.</li>
-<li><code>review page</code> atau <code>reviews page</code> untuk
-halaman review.</li>
+<li><code>review page</code> untuk halaman review.</li>
 <li><code>game card</code> untuk kartu game.</li>
 <li><code>wishlist</code> untuk fitur simpan game.</li>
 <li><code>search page</code> untuk halaman pencarian.</li>
 <li><code>profile page</code> untuk halaman profil.</li>
-<li><code>game detail page</code> untuk halaman detail game.</li>
 <li><code>all games page</code> untuk halaman semua game.</li>
+<li><code>about page</code> untuk halaman about.</li>
 </ul>
-<p>Komentar di kode memang dibuat seperti itu supaya bagian penting
+<p>Komentar di kode sengaja memakai kata kunci itu supaya bagian penting
 cepat ditemukan.</p>
 <h2 id="halaman-utama">Halaman utama</h2>
 <figure>
 <img src="screenshots/index.png" alt="Screenshot halaman utama" />
 <figcaption aria-hidden="true">Screenshot halaman utama</figcaption>
 </figure>
-<p>Halaman utama adalah pintu masuk website. Bagian atas berisi navbar,
-search, tombol tema, wishlist, dan login atau profil.</p>
-<p>Fitur di halaman ini:</p>
+<p>Halaman utama menjadi pintu masuk website. Di bagian atas ada navbar,
+search, tombol tema, wishlist, dan tombol login atau profil. Hero
+section dibuat lebih sederhana dan sekarang sudutnya bulat penuh.</p>
+<p>Fitur utama:</p>
 <ul>
-<li>Hero section untuk memperkenalkan website.</li>
+<li>Hero section.</li>
 <li>Tombol menuju daftar semua game.</li>
-<li>Statistik jumlah game, platform, dan review.</li>
-<li>Bagian Trending Now.</li>
-<li>Bagian Game of the Week.</li>
-<li>Bagian Top Rated.</li>
+<li>Statistik singkat.</li>
+<li>Trending Now.</li>
+<li>Game of the Week.</li>
+<li>Top Rated.</li>
 </ul>
-<p>File yang paling sering dibuka untuk halaman ini:</p>
+<p>File penting:</p>
 <ul>
 <li><code>index.html</code></li>
 <li><code>css/pages/home.css</code></li>
@@ -247,15 +249,15 @@ search, tombol tema, wishlist, dan login atau profil.</p>
 game</figcaption>
 </figure>
 <p>Halaman ini menampilkan semua game dalam bentuk list. User bisa
-menyaring game berdasarkan platform, genre, urutan, dan kata
-pencarian.</p>
-<p>Fitur di halaman ini:</p>
+mencari, memfilter, dan mengurutkan game. Mode terang juga sudah
+diperbaiki supaya teks filter tetap terbaca.</p>
+<p>Fitur utama:</p>
 <ul>
 <li>Filter platform.</li>
 <li>Filter genre.</li>
 <li>Sort A-Z, score, atau tahun.</li>
 <li>Search kecil di halaman.</li>
-<li>Tombol reset filter.</li>
+<li>Reset filter.</li>
 <li>Kartu game berbentuk list.</li>
 </ul>
 <p>File penting:</p>
@@ -271,20 +273,18 @@ pencarian.</p>
 <figcaption aria-hidden="true">Screenshot halaman detail
 game</figcaption>
 </figure>
-<p>Halaman ini dipakai untuk melihat satu game secara lengkap. Game
-dipilih dari query URL, contohnya
-<code>game.html?id=elden-ring</code>.</p>
-<p>Fitur di halaman ini:</p>
+<p>Halaman detail dipakai untuk melihat satu game secara lengkap. Game
+dipilih dari URL, misalnya <code>game.html?id=elden-ring</code>.</p>
+<p>Fitur utama:</p>
 <ul>
-<li>Banner detail game.</li>
-<li>Trailer game.</li>
+<li>Banner game.</li>
+<li>Trailer.</li>
 <li>Info genre, platform, developer, dan tahun.</li>
 <li>Metascore.</li>
-<li>Review dari critic.</li>
-<li>Review dari user.</li>
+<li>Review critic dan user.</li>
 <li>Form tulis review.</li>
 <li>Tombol wishlist.</li>
-<li>Rekomendasi game lain.</li>
+<li>Rekomendasi 3 game lain.</li>
 </ul>
 <p>File penting:</p>
 <ul>
@@ -299,16 +299,16 @@ dipilih dari query URL, contohnya
 <img src="screenshots/reviews.png" alt="Screenshot halaman review" />
 <figcaption aria-hidden="true">Screenshot halaman review</figcaption>
 </figure>
-<p>Halaman ini menampilkan semua review dari satu game. Halaman ini
-cocok kalau user ingin membaca komentar lebih banyak tanpa membuka
-detail game terus.</p>
-<p>Fitur di halaman ini:</p>
+<p>Halaman review menampilkan semua review dari satu game. Halaman ini
+enak dipakai kalau user ingin membaca komentar tanpa membuka detail game
+terus-menerus.</p>
+<p>Fitur utama:</p>
 <ul>
 <li>Header nama game.</li>
 <li>Jumlah review.</li>
 <li>Sort review.</li>
 <li>Kartu review.</li>
-<li>Panel untuk membaca review lengkap.</li>
+<li>Panel untuk membaca review panjang.</li>
 </ul>
 <p>File penting:</p>
 <ul>
@@ -322,11 +322,12 @@ detail game terus.</p>
 <img src="screenshots/search.png" alt="Screenshot halaman pencarian" />
 <figcaption aria-hidden="true">Screenshot halaman pencarian</figcaption>
 </figure>
-<p>Halaman pencarian muncul saat user mencari game dari navbar. Hasil
-pencarian tetap bisa difilter lagi.</p>
-<p>Fitur di halaman ini:</p>
+<p>Halaman search muncul saat user mencari game dari navbar. Kartu hasil
+pencarian sekarang mengikuti gaya kartu game utama supaya tidak terlihat
+berbeda sendiri.</p>
+<p>Fitur utama:</p>
 <ul>
-<li>Menampilkan kata yang dicari.</li>
+<li>Menampilkan kata pencarian.</li>
 <li>Menampilkan jumlah hasil.</li>
 <li>Filter platform.</li>
 <li>Filter genre.</li>
@@ -344,12 +345,13 @@ pencarian tetap bisa difilter lagi.</p>
 <img src="screenshots/wishlist.png" alt="Screenshot halaman wishlist" />
 <figcaption aria-hidden="true">Screenshot halaman wishlist</figcaption>
 </figure>
-<p>Wishlist menyimpan game yang disukai user. Data wishlist disimpan di
-localStorage, jadi masih ada selama browser belum dibersihkan.</p>
-<p>Fitur di halaman ini:</p>
+<p>Wishlist menyimpan game yang disukai user. Kartu wishlist sekarang
+dibuat 4 kolom di desktop dan mengikuti gaya kartu game di halaman
+utama.</p>
+<p>Fitur utama:</p>
 <ul>
-<li>Menampilkan daftar game yang disimpan.</li>
-<li>Tombol remove untuk menghapus game dari wishlist.</li>
+<li>Daftar game yang disimpan.</li>
+<li>Tombol remove.</li>
 <li>Empty state kalau belum ada game.</li>
 <li>Jumlah wishlist di navbar ikut berubah.</li>
 </ul>
@@ -366,9 +368,8 @@ localStorage, jadi masih ada selama browser belum dibersihkan.</p>
 <figcaption aria-hidden="true">Screenshot halaman login</figcaption>
 </figure>
 <p>Halaman login dipakai untuk masuk ke akun yang sudah dibuat. Sistem
-login ini sederhana dan hanya untuk proyek belajar, bukan untuk website
-produksi.</p>
-<p>Fitur di halaman ini:</p>
+ini sederhana karena hanya untuk praktikum, bukan website produksi.</p>
+<p>Fitur utama:</p>
 <ul>
 <li>Input username.</li>
 <li>Input password.</li>
@@ -389,14 +390,14 @@ produksi.</p>
 <figcaption aria-hidden="true">Screenshot halaman register</figcaption>
 </figure>
 <p>Halaman register dipakai untuk membuat akun baru. User bisa
-menambahkan foto profil, tapi bagian ini opsional.</p>
-<p>Fitur di halaman ini:</p>
+menambahkan foto profil, tetapi bagian itu opsional.</p>
+<p>Fitur utama:</p>
 <ul>
 <li>Input username.</li>
 <li>Input password.</li>
 <li>Konfirmasi password.</li>
 <li>Upload foto profil.</li>
-<li>Preview foto sebelum daftar.</li>
+<li>Preview foto.</li>
 <li>Validasi username dan password.</li>
 </ul>
 <p>File penting:</p>
@@ -411,20 +412,19 @@ menambahkan foto profil, tapi bagian ini opsional.</p>
 <img src="screenshots/profile.png" alt="Screenshot halaman profil" />
 <figcaption aria-hidden="true">Screenshot halaman profil</figcaption>
 </figure>
-<p>Halaman profil menampilkan data user yang sedang login. Dari sini
-user bisa melihat review yang pernah dibuat dan mengubah username atau
-foto profil.</p>
-<p>Fitur di halaman ini:</p>
+<p>Halaman profil menampilkan data user yang sedang login. User bisa
+melihat review yang pernah dibuat, mengubah username, mengubah foto
+profil, dan menghapus review sendiri.</p>
+<p>Fitur utama:</p>
 <ul>
 <li>Foto profil.</li>
 <li>Username.</li>
 <li>Tanggal akun dibuat.</li>
 <li>Jumlah review.</li>
 <li>Jumlah wishlist.</li>
-<li>Daftar review milik user.</li>
-<li>Upload foto profil.</li>
+<li>Riwayat review.</li>
 <li>Edit username.</li>
-<li>Hapus review sendiri.</li>
+<li>Hapus review.</li>
 </ul>
 <p>File penting:</p>
 <ul>
@@ -438,14 +438,16 @@ foto profil.</p>
 <img src="screenshots/about.png" alt="Screenshot halaman about" />
 <figcaption aria-hidden="true">Screenshot halaman about</figcaption>
 </figure>
-<p>Halaman about menjelaskan tujuan proyek MetaPlay. Isinya lebih ke
-informasi proyek dan pembuat.</p>
-<p>Fitur di halaman ini:</p>
+<p>Halaman about menjelaskan tujuan proyek MetaPlay dan data pembuat.
+Lima kartu informasi dibuat sejajar di desktop. Statistik seperti
+<code>50+ Games</code>, <code>6 Platforms</code>, <code>8 Pages</code>,
+dan <code>0 Frameworks</code> dibuat seperti pill supaya lebih rapi.</p>
+<p>Fitur utama:</p>
 <ul>
 <li>Penjelasan singkat proyek.</li>
-<li>Kartu fitur.</li>
-<li>Statistik game.</li>
-<li>Bagian academic context.</li>
+<li>Lima kartu informasi.</li>
+<li>Statistik berbentuk pill.</li>
+<li>Academic context.</li>
 <li>Profil pembuat.</li>
 </ul>
 <p>File penting:</p>
@@ -464,25 +466,25 @@ platform, search, jam, tombol tema, wishlist, dan login atau profil.</p>
 <li><code>css/style.css</code></li>
 </ul>
 <h3 id="theme-toggle">Theme toggle</h3>
-<p>Website punya tema gelap dan terang. Tombol tema ada di navbar.
-Pilihan tema disimpan di localStorage.</p>
+<p>Website punya tema gelap dan terang. Pilihan tema disimpan di
+localStorage, jadi pilihan user tetap dipakai saat halaman dibuka
+lagi.</p>
 <p>File utama:</p>
 <ul>
 <li><code>js/core/theme.js</code></li>
 <li><code>css/style.css</code></li>
 </ul>
 <h3 id="search">Search</h3>
-<p>Search di navbar memberi saran game saat user mengetik. Kalau user
-menekan hasil pencarian, website membuka detail game atau halaman
-search.</p>
+<p>Search di navbar memberi saran game saat user mengetik. User bisa
+membuka detail game langsung atau masuk ke halaman search.</p>
 <p>File utama:</p>
 <ul>
 <li><code>js/components/navbar.js</code></li>
 <li><code>js/pages/search.js</code></li>
 </ul>
 <h3 id="review">Review</h3>
-<p>User bisa menulis review di halaman detail game. Review user disimpan
-di localStorage dan bisa dibaca lagi di halaman review atau profil.</p>
+<p>User bisa menulis review di halaman detail game. Review disimpan di
+localStorage dan muncul lagi di halaman review atau profil.</p>
 <p>File utama:</p>
 <ul>
 <li><code>js/features/reviews.js</code></li>
@@ -499,9 +501,8 @@ dari kartu game atau halaman detail game.</p>
 <li><code>js/pages/wishlistPage.js</code></li>
 </ul>
 <h3 id="auth-sederhana">Auth sederhana</h3>
-<p>Login dan register dibuat untuk simulasi akun. Karena datanya di
-localStorage, fitur ini cocok untuk tugas praktikum, bukan untuk website
-asli yang dipakai publik.</p>
+<p>Login dan register dibuat untuk simulasi akun. Karena datanya ada di
+localStorage, fitur ini cocok untuk tugas praktikum dan demo lokal.</p>
 <p>File utama:</p>
 <ul>
 <li><code>js/core/auth.js</code></li>
@@ -510,17 +511,17 @@ asli yang dipakai publik.</p>
 <li><code>js/pages/profile.js</code></li>
 </ul>
 <h2 id="catatan-untuk-pemula">Catatan untuk pemula</h2>
-<p>Kalau ingin mengubah tampilan halaman tertentu, buka file CSS di
-<code>css/pages/</code>. Misalnya mau mengubah halaman review, buka
-<code>css/pages/reviews.css</code>.</p>
-<p>Kalau ingin mengubah fungsi halaman tertentu, buka file JS di
-<code>js/pages/</code>. Misalnya mau mengubah halaman detail game, buka
-<code>js/pages/game.js</code>.</p>
+<p>Kalau ingin mengubah tampilan halaman tertentu, buka CSS di
+<code>css/pages/</code>. Misalnya ingin mengubah wishlist, buka
+<code>css/pages/wishlist.css</code>.</p>
+<p>Kalau ingin mengubah fungsi halaman tertentu, buka JS di
+<code>js/pages/</code>. Misalnya ingin mengubah halaman profil, buka
+<code>js/pages/profile.js</code>.</p>
 <p>Kalau ingin mengubah data game, buka <code>js/core/data.js</code>.
 Tambahkan data baru ke <code>fullGameData</code> dengan format yang sama
-seperti game lain.</p>
-<p>Kalau bingung mulai dari mana, pakai <code>Ctrl + F</code> lalu cari
-nama fitur. Komentar di kode sudah diberi kata kunci supaya gampang
-dilacak.</p>
+seperti data lain.</p>
+<p>Kalau bingung mulai dari mana, pakai <code>Ctrl + F</code> dan cari
+nama fiturnya. Komentar di kode sudah dibuat untuk membantu pencarian
+itu.</p>
 </body>
 </html>

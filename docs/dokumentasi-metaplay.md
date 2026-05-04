@@ -1,15 +1,15 @@
 # Dokumentasi website MetaPlay
 
 Nama proyek: MetaPlay  
-Jenis proyek: website katalog dan review game  
+Jenis proyek: katalog dan review game  
 Bahasa: HTML, CSS, JavaScript  
 Penyimpanan data: localStorage browser
 
 ## Gambaran singkat
 
-MetaPlay adalah website sederhana untuk melihat daftar game, membaca review, memberi review, dan menyimpan game ke wishlist. Website ini tidak memakai backend. Semua data login, review user, dan wishlist disimpan di browser lewat localStorage.
+MetaPlay adalah website praktikum untuk mencari game, membaca review, menulis review, dan menyimpan game ke wishlist. Website ini tidak memakai backend. Data akun, wishlist, dan review user disimpan di browser lewat localStorage.
 
-Desainnya sekarang sengaja dibuat lebih sederhana. Efek yang terlalu ramai seperti sparkle, bintang animasi, dan glow yang bergerak sudah dikurangi supaya kode CSS lebih mudah dibaca.
+Tampilan website sudah dibuat lebih sederhana dari versi awal. Efek dekoratif yang terlalu ramai dikurangi supaya halaman lebih bersih dan CSS lebih mudah diikuti. Bagian login, register, profil, wishlist, search, dan about juga sudah dirapikan agar tampilannya lebih konsisten.
 
 ## Struktur file utama
 
@@ -21,9 +21,9 @@ Desainnya sekarang sengaja dibuat lebih sederhana. Efek yang terlalu ramai seper
 - `wishlist.html` untuk game yang disimpan.
 - `login.html` dan `register.html` untuk akun user.
 - `profile.html` untuk profil user.
-- `about.html` untuk penjelasan proyek.
+- `about.html` untuk informasi proyek.
 
-CSS utama ada di `css/style.css`. CSS per halaman ada di folder `css/pages/`. JavaScript dipisah ke folder `js/core/`, `js/components/`, `js/features/`, dan `js/pages/`.
+CSS utama ada di `css/style.css`. CSS khusus halaman ada di `css/pages/`. JavaScript dipisah ke `js/core/`, `js/components/`, `js/features/`, dan `js/pages/`.
 
 ## Cara mencari bagian kode
 
@@ -31,32 +31,32 @@ Di VS Code, tekan `Ctrl + F`, lalu cari kata ini:
 
 - `navbar` untuk menu atas.
 - `hero section` untuk bagian pembuka halaman utama.
-- `review page` atau `reviews page` untuk halaman review.
+- `review page` untuk halaman review.
 - `game card` untuk kartu game.
 - `wishlist` untuk fitur simpan game.
 - `search page` untuk halaman pencarian.
 - `profile page` untuk halaman profil.
-- `game detail page` untuk halaman detail game.
 - `all games page` untuk halaman semua game.
+- `about page` untuk halaman about.
 
-Komentar di kode memang dibuat seperti itu supaya bagian penting cepat ditemukan.
+Komentar di kode sengaja memakai kata kunci itu supaya bagian penting cepat ditemukan.
 
 ## Halaman utama
 
 ![Screenshot halaman utama](screenshots/index.png)
 
-Halaman utama adalah pintu masuk website. Bagian atas berisi navbar, search, tombol tema, wishlist, dan login atau profil.
+Halaman utama menjadi pintu masuk website. Di bagian atas ada navbar, search, tombol tema, wishlist, dan tombol login atau profil. Hero section dibuat lebih sederhana dan sekarang sudutnya bulat penuh.
 
-Fitur di halaman ini:
+Fitur utama:
 
-- Hero section untuk memperkenalkan website.
+- Hero section.
 - Tombol menuju daftar semua game.
-- Statistik jumlah game, platform, dan review.
-- Bagian Trending Now.
-- Bagian Game of the Week.
-- Bagian Top Rated.
+- Statistik singkat.
+- Trending Now.
+- Game of the Week.
+- Top Rated.
 
-File yang paling sering dibuka untuk halaman ini:
+File penting:
 
 - `index.html`
 - `css/pages/home.css`
@@ -66,15 +66,15 @@ File yang paling sering dibuka untuk halaman ini:
 
 ![Screenshot halaman semua game](screenshots/games.png)
 
-Halaman ini menampilkan semua game dalam bentuk list. User bisa menyaring game berdasarkan platform, genre, urutan, dan kata pencarian.
+Halaman ini menampilkan semua game dalam bentuk list. User bisa mencari, memfilter, dan mengurutkan game. Mode terang juga sudah diperbaiki supaya teks filter tetap terbaca.
 
-Fitur di halaman ini:
+Fitur utama:
 
 - Filter platform.
 - Filter genre.
 - Sort A-Z, score, atau tahun.
 - Search kecil di halaman.
-- Tombol reset filter.
+- Reset filter.
 - Kartu game berbentuk list.
 
 File penting:
@@ -88,19 +88,18 @@ File penting:
 
 ![Screenshot halaman detail game](screenshots/game.png)
 
-Halaman ini dipakai untuk melihat satu game secara lengkap. Game dipilih dari query URL, contohnya `game.html?id=elden-ring`.
+Halaman detail dipakai untuk melihat satu game secara lengkap. Game dipilih dari URL, misalnya `game.html?id=elden-ring`.
 
-Fitur di halaman ini:
+Fitur utama:
 
-- Banner detail game.
-- Trailer game.
+- Banner game.
+- Trailer.
 - Info genre, platform, developer, dan tahun.
 - Metascore.
-- Review dari critic.
-- Review dari user.
+- Review critic dan user.
 - Form tulis review.
 - Tombol wishlist.
-- Rekomendasi game lain.
+- Rekomendasi 3 game lain.
 
 File penting:
 
@@ -114,15 +113,15 @@ File penting:
 
 ![Screenshot halaman review](screenshots/reviews.png)
 
-Halaman ini menampilkan semua review dari satu game. Halaman ini cocok kalau user ingin membaca komentar lebih banyak tanpa membuka detail game terus.
+Halaman review menampilkan semua review dari satu game. Halaman ini enak dipakai kalau user ingin membaca komentar tanpa membuka detail game terus-menerus.
 
-Fitur di halaman ini:
+Fitur utama:
 
 - Header nama game.
 - Jumlah review.
 - Sort review.
 - Kartu review.
-- Panel untuk membaca review lengkap.
+- Panel untuk membaca review panjang.
 
 File penting:
 
@@ -135,11 +134,11 @@ File penting:
 
 ![Screenshot halaman pencarian](screenshots/search.png)
 
-Halaman pencarian muncul saat user mencari game dari navbar. Hasil pencarian tetap bisa difilter lagi.
+Halaman search muncul saat user mencari game dari navbar. Kartu hasil pencarian sekarang mengikuti gaya kartu game utama supaya tidak terlihat berbeda sendiri.
 
-Fitur di halaman ini:
+Fitur utama:
 
-- Menampilkan kata yang dicari.
+- Menampilkan kata pencarian.
 - Menampilkan jumlah hasil.
 - Filter platform.
 - Filter genre.
@@ -156,12 +155,12 @@ File penting:
 
 ![Screenshot halaman wishlist](screenshots/wishlist.png)
 
-Wishlist menyimpan game yang disukai user. Data wishlist disimpan di localStorage, jadi masih ada selama browser belum dibersihkan.
+Wishlist menyimpan game yang disukai user. Kartu wishlist sekarang dibuat 4 kolom di desktop dan mengikuti gaya kartu game di halaman utama.
 
-Fitur di halaman ini:
+Fitur utama:
 
-- Menampilkan daftar game yang disimpan.
-- Tombol remove untuk menghapus game dari wishlist.
+- Daftar game yang disimpan.
+- Tombol remove.
 - Empty state kalau belum ada game.
 - Jumlah wishlist di navbar ikut berubah.
 
@@ -176,9 +175,9 @@ File penting:
 
 ![Screenshot halaman login](screenshots/login.png)
 
-Halaman login dipakai untuk masuk ke akun yang sudah dibuat. Sistem login ini sederhana dan hanya untuk proyek belajar, bukan untuk website produksi.
+Halaman login dipakai untuk masuk ke akun yang sudah dibuat. Sistem ini sederhana karena hanya untuk praktikum, bukan website produksi.
 
-Fitur di halaman ini:
+Fitur utama:
 
 - Input username.
 - Input password.
@@ -197,15 +196,15 @@ File penting:
 
 ![Screenshot halaman register](screenshots/register.png)
 
-Halaman register dipakai untuk membuat akun baru. User bisa menambahkan foto profil, tapi bagian ini opsional.
+Halaman register dipakai untuk membuat akun baru. User bisa menambahkan foto profil, tetapi bagian itu opsional.
 
-Fitur di halaman ini:
+Fitur utama:
 
 - Input username.
 - Input password.
 - Konfirmasi password.
 - Upload foto profil.
-- Preview foto sebelum daftar.
+- Preview foto.
 - Validasi username dan password.
 
 File penting:
@@ -219,19 +218,18 @@ File penting:
 
 ![Screenshot halaman profil](screenshots/profile.png)
 
-Halaman profil menampilkan data user yang sedang login. Dari sini user bisa melihat review yang pernah dibuat dan mengubah username atau foto profil.
+Halaman profil menampilkan data user yang sedang login. User bisa melihat review yang pernah dibuat, mengubah username, mengubah foto profil, dan menghapus review sendiri.
 
-Fitur di halaman ini:
+Fitur utama:
 
 - Foto profil.
 - Username.
 - Tanggal akun dibuat.
 - Jumlah review.
 - Jumlah wishlist.
-- Daftar review milik user.
-- Upload foto profil.
+- Riwayat review.
 - Edit username.
-- Hapus review sendiri.
+- Hapus review.
 
 File penting:
 
@@ -244,14 +242,14 @@ File penting:
 
 ![Screenshot halaman about](screenshots/about.png)
 
-Halaman about menjelaskan tujuan proyek MetaPlay. Isinya lebih ke informasi proyek dan pembuat.
+Halaman about menjelaskan tujuan proyek MetaPlay dan data pembuat. Lima kartu informasi dibuat sejajar di desktop. Statistik seperti `50+ Games`, `6 Platforms`, `8 Pages`, dan `0 Frameworks` dibuat seperti pill supaya lebih rapi.
 
-Fitur di halaman ini:
+Fitur utama:
 
 - Penjelasan singkat proyek.
-- Kartu fitur.
-- Statistik game.
-- Bagian academic context.
+- Lima kartu informasi.
+- Statistik berbentuk pill.
+- Academic context.
 - Profil pembuat.
 
 File penting:
@@ -273,7 +271,7 @@ File utama:
 
 ### Theme toggle
 
-Website punya tema gelap dan terang. Tombol tema ada di navbar. Pilihan tema disimpan di localStorage.
+Website punya tema gelap dan terang. Pilihan tema disimpan di localStorage, jadi pilihan user tetap dipakai saat halaman dibuka lagi.
 
 File utama:
 
@@ -282,7 +280,7 @@ File utama:
 
 ### Search
 
-Search di navbar memberi saran game saat user mengetik. Kalau user menekan hasil pencarian, website membuka detail game atau halaman search.
+Search di navbar memberi saran game saat user mengetik. User bisa membuka detail game langsung atau masuk ke halaman search.
 
 File utama:
 
@@ -291,7 +289,7 @@ File utama:
 
 ### Review
 
-User bisa menulis review di halaman detail game. Review user disimpan di localStorage dan bisa dibaca lagi di halaman review atau profil.
+User bisa menulis review di halaman detail game. Review disimpan di localStorage dan muncul lagi di halaman review atau profil.
 
 File utama:
 
@@ -311,7 +309,7 @@ File utama:
 
 ### Auth sederhana
 
-Login dan register dibuat untuk simulasi akun. Karena datanya di localStorage, fitur ini cocok untuk tugas praktikum, bukan untuk website asli yang dipakai publik.
+Login dan register dibuat untuk simulasi akun. Karena datanya ada di localStorage, fitur ini cocok untuk tugas praktikum dan demo lokal.
 
 File utama:
 
@@ -322,10 +320,10 @@ File utama:
 
 ## Catatan untuk pemula
 
-Kalau ingin mengubah tampilan halaman tertentu, buka file CSS di `css/pages/`. Misalnya mau mengubah halaman review, buka `css/pages/reviews.css`.
+Kalau ingin mengubah tampilan halaman tertentu, buka CSS di `css/pages/`. Misalnya ingin mengubah wishlist, buka `css/pages/wishlist.css`.
 
-Kalau ingin mengubah fungsi halaman tertentu, buka file JS di `js/pages/`. Misalnya mau mengubah halaman detail game, buka `js/pages/game.js`.
+Kalau ingin mengubah fungsi halaman tertentu, buka JS di `js/pages/`. Misalnya ingin mengubah halaman profil, buka `js/pages/profile.js`.
 
-Kalau ingin mengubah data game, buka `js/core/data.js`. Tambahkan data baru ke `fullGameData` dengan format yang sama seperti game lain.
+Kalau ingin mengubah data game, buka `js/core/data.js`. Tambahkan data baru ke `fullGameData` dengan format yang sama seperti data lain.
 
-Kalau bingung mulai dari mana, pakai `Ctrl + F` lalu cari nama fitur. Komentar di kode sudah diberi kata kunci supaya gampang dilacak.
+Kalau bingung mulai dari mana, pakai `Ctrl + F` dan cari nama fiturnya. Komentar di kode sudah dibuat untuk membantu pencarian itu.

@@ -1,16 +1,43 @@
 /*
   Wishlist page styles.
-  Search keywords: wishlist page, saved games, wishlist grid.
+  Search keywords: wishlist page, saved games, wishlist grid, wishlist card.
 */
 
 /* Search: wishlist page layout */
 .wishlist-header { padding: 100px clamp(24px,5vw,64px) 36px; }
 .wishlist-header h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800; }
 
-/* Search: wishlist two column layout */
+/* Search: wishlist cards, same shape as home game cards */
 #wishlistGrid.game-grid {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
 }
-@media (max-width: 900px) {
+
+#wishlistGrid .game-card {
+  min-width: 0;
+  height: 100%;
+}
+
+#wishlistGrid .card-cover-link { width: 145px; }
+#wishlistGrid .card-cover,
+#wishlistGrid .card-cover img { min-height: 150px; }
+#wishlistGrid .card-body { padding: 16px 14px; }
+#wishlistGrid .card-title { font-size: .95rem; }
+#wishlistGrid .wishlist-remove-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: .78rem;
+}
+
+@media (max-width: 1100px) {
+  #wishlistGrid.game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #wishlistGrid .card-cover-link { width: 145px; }
+}
+
+@media (max-width: 640px) {
   #wishlistGrid.game-grid { grid-template-columns: 1fr; }
+  #wishlistGrid .card-cover-link { width: 110px; }
 }

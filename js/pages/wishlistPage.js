@@ -41,8 +41,7 @@ function renderWishlist() {
     // Search: remove from wishlist button.
     const removeBtn = document.createElement('button');
     removeBtn.textContent = '✕ Remove';
-    removeBtn.className   = 'btn btn-danger';
-    removeBtn.style.cssText = 'font-size:.72rem;padding:5px 12px;margin-top:6px;';
+    removeBtn.className   = 'btn btn-danger wishlist-remove-btn';
 
     removeBtn.addEventListener('click', () => {
       // Search: remove card animation.

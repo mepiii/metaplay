@@ -43,23 +43,21 @@
     <div
       class="profile-avatar"
       id="profileAvatar"
-      id2="profileAvatarClickable"
-      title="Click to change photo"
-      style="cursor:pointer">?</div>
+      title="Click to change photo">?</div>
     <input type="file" id="photoUploadInput" accept="image/*" style="display:none">
 
-    <div>
+    <div class="profile-info">
       <h1 class="profile-name" id="profileName">Loading…</h1>
       <p class="profile-since" id="profileSince"></p>
 
       <!-- Search: edit username -->
-      <div style="display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;">
+      <div class="edit-username-row">
         <button class="edit-toggle-btn" id="editUsernameToggle">Edit Username</button>
       </div>
       <div class="edit-username-wrap" id="editUsernameArea" style="display:none;margin-top:10px;">
         <input class="edit-username-input" id="newUsernameInput" type="text" placeholder="New username…">
-        <button class="btn btn-primary" id="saveUsernameBtn" style="font-size:.82rem;padding:8px 18px;">Save</button>
-        <span id="usernameError" style="font-size:.78rem;color:var(--low);display:none;"></span>
+        <button class="btn btn-primary save-username-btn" id="saveUsernameBtn">Save</button>
+        <span class="username-error" id="usernameError"></span>
       </div>
 
       <div class="profile-stats">
@@ -74,16 +72,14 @@
       </div>
     </div>
 
-    <div style="margin-left:auto;display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-wrap:wrap;">
-      <a href="wishlist.html" class="btn btn-ghost" style="font-size:.875rem">View Wishlist</a>
+    <div class="profile-actions">
+      <a href="wishlist.html" class="btn btn-ghost">View Wishlist</a>
       <button class="logout-btn" id="logoutBtn">Log Out</button>
     </div>
   </div>
 
   <!-- User's reviews -->
-  <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:20px;color:var(--text)">
-    My Reviews
-  </h2>
+  <h2 class="profile-section-title">My Reviews</h2>
   <div class="profile-reviews-grid" id="profileReviews"></div>
 
 </div>

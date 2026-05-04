@@ -51,14 +51,14 @@
 
 <!-- Search: search page header -->
 <div class="search-header">
-  <h1 style="font-size:clamp(1.5rem,4vw,2.5rem);font-weight:800;">
+  <h1 class="search-title">
     Results for <span class="search-query" id="searchQuery"></span>
     <span class="result-count" id="resultCount"></span>
   </h1>
 </div>
 
 <!-- Search: search filters -->
-<div style="padding:0 clamp(24px,5vw,64px);margin-bottom:8px;">
+<div class="search-filters-wrap">
   <div class="filter-bar">
     <span class="filter-label">Platform:</span>
     <button class="tab active" data-platform="All">All</button>
@@ -88,8 +88,8 @@
       <option value="oldest">Oldest First</option>
       <option value="alpha">A–Z</option>
     </select>
-    <div class="filter-info" style="margin:0">
-      <span id="activeFilterCount" style="color:var(--muted);font-size:.85rem;"></span>
+    <div class="filter-info">
+      <span class="search-filter-count" id="activeFilterCount"></span>
     </div>
   </div>
 </div>
