@@ -18,44 +18,35 @@
 <!-- Search: navbar, top navigation -->
 <header class="navbar">
   <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
-
   <nav class="nav-links">
     <a href="index.html" class="nav-link active">Discover</a>
     <a href="games.html" class="nav-link">All Games</a>
-
-    <!-- Search: platform dropdown menu -->
     <div class="platform-menu">
       <span class="platform-trigger">Platforms ▾</span>
       <div class="platform-dropdown">
-        <a href="games.html?platform=PC"            class="platform-item">PC <span class="platform-count" id="pcCount">–</span></a>
-        <a href="games.html?platform=PS5"           class="platform-item">PlayStation 5 <span class="platform-count" id="ps5Count">–</span></a>
-        <a href="games.html?platform=PS4"           class="platform-item">PlayStation 4 <span class="platform-count" id="ps4Count">–</span></a>
-        <a href="games.html?platform=Xbox Series X/S" class="platform-item">Xbox Series X/S <span class="platform-count" id="xboxsCount">–</span></a>
-        <a href="games.html?platform=Xbox One"      class="platform-item">Xbox One <span class="platform-count" id="xboxCount">–</span></a>
-        <a href="games.html?platform=Switch"        class="platform-item">Switch <span class="platform-count" id="switchCount">–</span></a>
+        <a href="games.html?platform=PC"            class="platform-item">PC</a>
+        <a href="games.html?platform=PS5"           class="platform-item">PlayStation 5</a>
+        <a href="games.html?platform=PS4"           class="platform-item">PlayStation 4</a>
+        <a href="games.html?platform=Xbox Series X/S" class="platform-item">Xbox Series X/S</a>
+        <a href="games.html?platform=Xbox One"      class="platform-item">Xbox One</a>
+        <a href="games.html?platform=Switch"        class="platform-item">Switch</a>
         <div class="platform-divider"></div>
-        <a href="games.html" class="platform-item active">All Platforms</a>
+        <a href="games.html" class="platform-item">All Platforms</a>
       </div>
     </div>
-
     <a href="about.html" class="nav-link">About</a>
   </nav>
-
   <div class="nav-right">
     <span class="live-time" id="liveTime">--:--</span>
-    <button class="icon-btn" id="themeToggle" title="Toggle theme">☾</button>
-
-    <!-- Search: login link or profile link -->
+    <button class="icon-btn" id="themeToggle">☾</button>
     <a href="login.html" class="nav-login-link" id="navLoginLink">Log In</a>
     <a href="profile.html" class="nav-profile" id="navProfile" style="display:none">
       <div class="nav-avatar" id="navAvatarImg"></div>
       <span class="nav-username" id="navUsernameText"></span>
     </a>
-
     <button class="wishlist-btn" id="wishlistBtn">
       ♡ Wishlist <span class="wishlist-count" id="wishlistCount">0</span>
     </button>
-
     <div class="search-wrap">
       <input class="search-input" id="searchField" type="text" placeholder="Search games…" autocomplete="off">
       <div class="search-suggestions" id="suggestionsBox"></div>

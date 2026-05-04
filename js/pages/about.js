@@ -4,6 +4,7 @@ import { gameList } from '../core/data.js';
 import { initPageTransitions, initBackToTop, initLiveClock, initScrollReveal } from '../core/app.js';
 import { initTheme } from '../core/theme.js';
 import { initNavbar } from '../components/navbar.js';
+import { initWishlistBtn } from '../features/wishlist.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initPageTransitions();
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLiveClock();
   initTheme();
   initNavbar();
+  initWishlistBtn();
 
   // Search: about page game count.
   const el = document.getElementById('gameCountStat');

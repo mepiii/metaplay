@@ -6,6 +6,7 @@ import { initPageTransitions, initBackToTop, initLiveClock } from '../core/app.j
 import { initTheme } from '../core/theme.js';
 import { initNavbar } from '../components/navbar.js';
 import { initReviewViewer } from '../components/reviewViewer.js';
+import { initWishlistBtn } from '../features/wishlist.js';
 import { getReviews } from '../features/reviews.js';
 
 const params = new URLSearchParams(window.location.search);
@@ -110,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLiveClock();
   initTheme();
   initNavbar();
+  initWishlistBtn();
   openViewer = initReviewViewer();
   renderHeader();
   renderReviews();
