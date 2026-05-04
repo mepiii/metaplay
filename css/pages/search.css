@@ -1,0 +1,9 @@
+/*
+  Search page styles.
+  Search keywords: search page, search results, result count.
+*/
+
+/* Search: search page layout */
+.search-header { padding: 100px clamp(24px,5vw,64px) 32px; }
+.search-query  { color: var(--accent); margin-left: 10px; }
+.result-count  { font-size: 1rem; color: var(--muted); margin-left: 6px; }

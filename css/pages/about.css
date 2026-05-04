@@ -1,0 +1,33 @@
+/*
+  About page styles.
+  Search keywords: about page, project description, feature cards, student profile, academic context.
+*/
+
+/* Search: about page layout */
+.about-hero    { padding: 130px 24px 72px; text-align: center; }
+.about-content { max-width: 720px; margin: 0 auto; padding: 0 24px 60px; text-align: center; }
+.about-lead    { font-size: 1.15rem; color: var(--muted); line-height: 1.75; margin-bottom: 32px; }
+.about-grid    { display: grid; grid-template-columns: repeat(5,1fr); gap: 20px; padding: 0 clamp(24px,5vw,64px) 80px; max-width: 1280px; margin: 0 auto; align-items: stretch; }
+.about-card {
+  background: linear-gradient(145deg, var(--card) 0%, var(--card-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 24px;
+  transition: border-color 0.38s ease, box-shadow 0.38s ease,
+              transform 0.38s cubic-bezier(0.4,0,.2,1);
+  display: flex; flex-direction: column;
+}
+.about-card:hover {
+  border-color: rgba(139,92,246,.38);
+  box-shadow: 0 10px 36px rgba(0,0,0,.3), 0 0 24px rgba(139,92,246,.07);
+  transform: translateY(-3px);
+}
+[data-theme="light"] .about-card {
+  background: linear-gradient(145deg, rgba(240,248,255,.97) 0%, rgba(222,234,250,.95) 100%);
+}
+.about-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+.about-card p  { font-size: .875rem; color: var(--muted); line-height: 1.7; }
+.stats-row     { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; padding: 40px clamp(16px,4vw,48px) 60px; border-top: 1px solid var(--border); }
+
+/* Search: about bottom grid */
+.about-bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 0 clamp(24px,5vw,64px) 60px; max-width: 900px; margin: 0 auto; align-items: stretch; }
+.about-bottom-grid .about-card { height: 100%; }

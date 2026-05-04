@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <title>Wishlist - MetaPlay</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/wishlist.css">
+</head>
+<body style="display:flex;flex-direction:column;min-height:100vh;">
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<header class="navbar">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Discover</a>
+    <a href="games.html" class="nav-link">All Games</a>
+    <a href="about.html" class="nav-link">About</a>
+  </nav>
+  <div class="nav-right">
+    <span class="live-time" id="liveTime">--:--</span>
+    <button class="icon-btn" id="themeToggle">☾</button>
+    <a href="login.html" class="nav-login-link" id="navLoginLink">Log In</a>
+    <a href="profile.html" class="nav-profile" id="navProfile" style="display:none">
+      <div class="nav-avatar" id="navAvatarImg"></div>
+      <span class="nav-username" id="navUsernameText"></span>
+    </a>
+    <button class="wishlist-btn" id="wishlistBtn">
+      ♥ Wishlist <span class="wishlist-count" id="wishlistCount">0</span>
+    </button>
+    <div class="search-wrap">
+      <input class="search-input" id="searchField" type="text" placeholder="Search games…" autocomplete="off">
+      <div class="search-suggestions" id="suggestionsBox"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wishlist-header">
+  <h1>My <span style="color:var(--accent)">Wishlist</span></h1>
+  <p style="color:var(--muted);margin-top:6px;font-size:.95rem;">
+    <span id="wishlistTotal">0</span> saved games
+  </p>
+</div>
+
+<div class="game-grid game-grid-padded" id="wishlistGrid" style="padding-bottom:60px;flex:1;"></div>
+
+<footer class="footer">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <div class="footer-links">
+    <a href="index.html">Discover</a>
+    <a href="games.html">All Games</a>
+    <a href="about.html">About</a>
+  </div>
+  <span class="footer-copy">© 2026 MetaPlay. All rights reserved.</span>
+</footer>
+
+<script type="module" src="js/pages/wishlistPage.js"></script>
+</body>
+</html>

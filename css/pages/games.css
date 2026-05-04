@@ -1,0 +1,82 @@
+/*
+  All games page styles.
+  Search keywords: all games page, game list, platform filter, genre filter, search filter.
+*/
+
+/* Search: game filters, platform tabs, genre select */
+.filter-bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  padding: 14px 0; margin-bottom: 4px;
+}
+.filter-label { font-size: .8rem; color: var(--muted); font-weight: 600; }
+.tab {
+  padding: 6px 16px; border-radius: 20px;
+  font-size: .8rem; font-weight: 600; color: var(--muted);
+  background: var(--card-2); border: 1px solid var(--border);
+  transition: color 0.3s ease, background 0.3s ease,
+              border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tab:hover  { color: var(--text); border-color: var(--accent); transform: translateY(-1px); }
+.tab.active { background: linear-gradient(135deg, #8B5CF6, #22D3EE); color: #fff; border-color: transparent; box-shadow: 0 4px 16px rgba(139,92,246,.38); }
+[data-theme="light"] .tab { background: rgba(255,255,255,.72); border-color: rgba(139,92,246,.22); }
+[data-theme="light"] .tab:hover { background: rgba(139,92,246,.10); }
+
+.filter-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.filter-select {
+  padding: 8px 14px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--card-2);
+  color: var(--text); font-size: .85rem; outline: none; cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+.filter-select:focus { border-color: var(--accent); }
+.filter-input {
+  padding: 8px 14px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--card-2);
+  color: var(--text); font-size: .85rem; outline: none; width: 220px;
+  transition: border-color 0.3s ease;
+}
+.filter-input:focus { border-color: var(--accent); }
+.filter-input::placeholder { color: var(--muted); }
+
+.filter-info { display: flex; align-items: center; justify-content: space-between; font-size: .875rem; color: var(--muted); margin-bottom: 20px; }
+.reset-btn { font-size: .8rem; color: var(--accent); font-weight: 600; transition: var(--t); }
+.reset-btn:hover { color: var(--accent-2); }
+
+/* Search: all games page layout */
+.games-header { padding: 100px clamp(24px,5vw,64px) 36px; }
+.games-header h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800; }
+
+/* Search: game list layout */
+.game-list { display: flex; flex-direction: column; padding: 0 clamp(24px,5vw,64px) 80px; }
+.game-list-item {
+  display: flex; align-items: center; gap: 20px;
+  padding: 14px 18px; border-radius: var(--r);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease, transform 0.3s ease; cursor: pointer;
+}
+.game-list-item:last-child { border-bottom: none; }
+.game-list-item:hover { background: var(--card-2); transform: translateX(3px); }
+[data-theme="light"] .game-list-item:hover { background: rgba(139,92,246,.07); }
+
+.list-thumb { width: 120px; height: 70px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: var(--card-2); }
+.list-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.list-info  { flex: 1; min-width: 0; }
+.list-title { font-size: .95rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 4px; }
+.list-title a { color: inherit; }
+.list-title a:hover { color: var(--accent-2); }
+.list-meta  { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: .72rem; color: var(--muted); font-weight: 500; }
+.list-meta .meta-tag { display: inline-flex; align-items: center; gap: 4px; }
+.list-score { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; flex-shrink: 0; font-size: .9rem; font-weight: 800; background: rgba(0,0,0,.4); border: 2px solid currentColor; }
+
+.list-wishlist-btn {
+  border: 2px solid #f472b6; color: #f472b6; background: transparent;
+  border-radius: 50%; width: 38px; height: 38px;
+  font-size: 1.2rem; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.list-wishlist-btn:hover  { background: rgba(244,114,182,.15); transform: scale(1.12); }
+.list-wishlist-btn.active { background: rgba(244,114,182,.20); color: #f472b6; border-color: #f472b6; }
+.list-btn { flex-shrink: 0; padding: 7px 16px; border-radius: 8px; font-size: .78rem; font-weight: 700; color: var(--accent); border: 1px solid var(--border); transition: var(--t); white-space: nowrap; }
+.list-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }

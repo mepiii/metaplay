@@ -1,0 +1,195 @@
+/*
+  Game detail page styles.
+  Search keywords: game detail page, game hero, trailer, review form, review card, related games.
+*/
+
+/* Search: game detail page layout */
+.game-hero {
+  position: relative; height: 380px;
+  display: flex; align-items: flex-end;
+  overflow: hidden; margin-top: 62px;
+}
+.game-hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: blur(18px) saturate(.7); transform: scale(1.1);
+}
+.game-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, var(--bg) 28%, rgba(4,8,15,.55) 100%);
+}
+.game-hero-content {
+  position: relative; z-index: 1;
+  display: flex; align-items: flex-end; gap: 28px;
+  padding: 28px clamp(16px,4vw,48px);
+}
+.game-hero-cover img   { width: 130px; border-radius: var(--r); box-shadow: var(--shadow); }
+.game-hero-title       { font-size: clamp(1.5rem,4vw,2.5rem); font-weight: 800; color: var(--text); line-height: 1.1; margin-bottom: 8px; }
+.game-hero-meta        { display: flex; flex-wrap: wrap; gap: 6px; font-size: .85rem; color: var(--muted); margin-bottom: 12px; }
+.game-hero-meta span   { color: var(--text); }
+.meta-dot              { color: var(--border); }
+.game-hero-score       { display: flex; align-items: center; gap: 12px; }
+.score-num             { font-size: 2.8rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.score-label           { font-size: .75rem; font-weight: 700; color: var(--muted); }
+.score-caption         { font-size: .72rem; color: var(--muted); }
+
+.two-col {
+  display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 32px;
+  padding: 40px clamp(40px,8vw,120px) 80px;
+  align-items: start; max-width: 1280px; margin: 0 auto;
+}
+.game-left { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+.trailer-frame { width: 100%; aspect-ratio: 16/9; border-radius: var(--r-lg); border: 1px solid var(--border); box-shadow: var(--shadow); }
+
+/* Search: review groups, critic review, user review */
+.review-group {
+  padding: 22px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, rgba(17,24,39,.86), rgba(31,41,55,.72));
+  box-shadow: 0 18px 54px rgba(9,10,26,.36), inset 0 1px 0 rgba(255,255,255,.04);
+  backdrop-filter: blur(14px) saturate(1.25);
+}
+[data-theme="light"] .review-group {
+  background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(241,234,254,.86));
+  box-shadow: 0 16px 42px rgba(76,29,149,.12), inset 0 1px 0 rgba(255,255,255,.72);
+}
+.group-header  { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 14px; }
+.community-header { margin-top: 18px; }
+.group-title   { font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.group-badge   { font-size: .72rem; color: var(--accent-2); border: 1px solid var(--border); padding: 4px 12px; border-radius: 999px; background: rgba(139,92,246,.12); }
+.expand-btn    { font-size: .8rem; color: var(--accent-2); font-weight: 700; transition: var(--t); padding: 4px 0; }
+.expand-btn:hover { color: var(--surface); transform: translateX(2px); }
+.review-cards  { display: flex; flex-direction: column; gap: 14px; }
+
+/* Search: game info panel, metadata sidebar */
+.info-panel { display: flex; flex-direction: column; gap: 16px; }
+.info-box {
+  background: linear-gradient(145deg, rgba(17,24,39,.88) 0%, rgba(31,41,55,.76) 100%);
+  border: 1px solid var(--border); border-radius: var(--r-lg); padding: 22px;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 16px 42px rgba(9,10,26,.26), inset 0 1px 0 rgba(255,255,255,.04);
+  backdrop-filter: blur(14px) saturate(1.2);
+}
+[data-theme="light"] .info-box {
+  background: linear-gradient(145deg, rgba(255,255,255,.92) 0%, rgba(241,234,254,.86) 100%);
+  box-shadow: 0 14px 36px rgba(76,29,149,.12), inset 0 1px 0 rgba(255,255,255,.78);
+}
+.info-box h4 { font-size: .75rem; font-weight: 700; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+.meta-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.meta-row:last-child { border-bottom: none; }
+.meta-label { font-size: .8rem; color: var(--muted); flex-shrink: 0; }
+.meta-value { font-size: .8rem; color: var(--text); font-weight: 600; text-align: right; }
+
+/* Search: score bars, metascore */
+.score-bars-wrap { display: flex; flex-direction: column; gap: 10px; }
+.score-bar-row   { display: flex; align-items: center; gap: 10px; font-size: .75rem; color: var(--muted); }
+.score-bar-bg    { flex: 1; height: 6px; border-radius: 3px; background: var(--card-2); overflow: hidden; }
+[data-theme="light"] .score-bar-bg { background: rgba(139,92,246,.12); }
+.score-bar-fill  { height: 100%; border-radius: 3px; transition: width .85s ease; }
+.score-bar-fill.high { background: var(--high); }
+.score-bar-fill.mid  { background: var(--mid); }
+.score-bar-fill.low  { background: var(--low); }
+
+/* Search: review card, reviewer avatar, review text */
+.review-card {
+  background: linear-gradient(145deg, rgba(31,41,55,.94), rgba(17,24,39,.88));
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 16px;
+  box-shadow: 0 12px 32px rgba(9,10,26,.24), inset 0 1px 0 rgba(255,255,255,.04);
+}
+[data-theme="light"] .review-card { background: rgba(255,255,255,.86); box-shadow: 0 10px 26px rgba(76,29,149,.10); }
+.review-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; font-size: .72rem; color: var(--muted); }
+.review-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.review-actions { display: flex; align-items: center; gap: 8px; }
+.reviewer-info  { display: flex; align-items: center; gap: 10px; }
+.reviewer-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--card); color: var(--text);
+  font-weight: 700; font-size: .9rem;
+  display: grid; place-items: center; flex-shrink: 0;
+  background-size: cover; background-position: center; overflow: hidden;
+}
+.reviewer-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.photo-avatar { background-size: cover; background-position: center; font-size: 0; }
+.reviewer-avatar.high { background-color: rgba(78,204,163,.15);  color: var(--high); }
+.reviewer-avatar.mid  { background-color: rgba(232,184,75,.15);  color: var(--mid); }
+.reviewer-avatar.low  { background-color: rgba(224,92,92,.15);   color: var(--low); }
+
+.reviewer-name { font-size: .875rem; font-weight: 600; color: var(--text); }
+.reviewer-date { font-size: .72rem; color: var(--muted); }
+.review-score  { font-size: 1.1rem; font-weight: 800; }
+.review-text   { font-size: .875rem; color: var(--muted); line-height: 1.6; overflow-wrap: break-word; word-break: break-word; }
+
+/* Search: write review form, submit review */
+.form-group { margin-bottom: 12px; }
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: 10px 14px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--card-2);
+  color: var(--text); font-size: .875rem; outline: none; transition: var(--t);
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--accent); }
+.form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+.form-textarea { resize: vertical; min-height: 90px; }
+.form-select option { background: var(--card); }
+
+.submit-btn {
+  width: 100%; padding: 12px;
+  background: linear-gradient(135deg, #8B5CF6, #22D3EE);
+  color: #fff; border-radius: 10px;
+  font-size: .9rem; font-weight: 700;
+  transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 18px rgba(139,92,246,.32);
+}
+.submit-btn:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 8px 26px rgba(139,92,246,.46); }
+.form-note { font-size: .72rem; color: var(--muted); text-align: center; margin-top: 8px; }
+
+/* Search: platform links, buy links */
+.platform-link {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; border-radius: 8px;
+  border: 1px solid var(--border); margin-bottom: 8px;
+  font-size: .875rem; color: var(--text); transition: var(--t);
+}
+.platform-link:hover { background: var(--card-2); border-color: var(--accent); }
+.platform-link:last-child { margin-bottom: 0; }
+
+/* Search: related games, recommended games */
+.related-section { padding: 0 clamp(40px,8vw,120px) 80px; max-width: 1280px; margin: 0 auto; }
+.related-grid    { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 16px; margin-top: 20px; }
+.related-grid .game-card { min-height: 180px; }
+.related-grid .card-cover-link { width: 150px; }
+.related-grid .card-cover,
+.related-grid .card-cover img { min-height: 180px; }
+
+/* Search: review viewer, full review panel */
+.viewer-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(4,8,15,.82); backdrop-filter: blur(10px);
+  display: none; align-items: center; justify-content: center; padding: 20px;
+}
+.viewer-overlay.show { display: flex; }
+.viewer-panel {
+  background: linear-gradient(145deg, var(--card) 0%, var(--card-2) 100%);
+  border: 1px solid rgba(139,92,246,.22);
+  border-radius: var(--r-lg); padding: 32px;
+  max-width: 560px; width: 100%; position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,.65);
+}
+[data-theme="light"] .viewer-panel {
+  background: linear-gradient(145deg, rgba(240,248,255,.98) 0%, rgba(222,234,250,.96) 100%);
+}
+.viewer-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--card-2); color: var(--muted);
+  font-size: 1.2rem; display: grid; place-items: center;
+  border: 1px solid var(--border); transition: var(--t);
+}
+.viewer-close:hover { color: var(--text); border-color: var(--accent); }
+.viewer-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.viewer-score  { font-size: 2rem; font-weight: 800; }
+.viewer-source { font-size: 1rem; font-weight: 700; color: var(--text); }
+.viewer-date   { font-size: .75rem; color: var(--muted); }
+.viewer-text   { font-size: .9rem; color: var(--text); line-height: 1.75; }

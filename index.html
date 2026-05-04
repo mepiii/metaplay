@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <title>MetaPlay - Discover Games Worth Playing</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Expert reviews and community ratings for every gamer.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body>
+
+
+
+<!-- Search: back to top button -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- Search: navbar, top navigation -->
+<header class="navbar">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link active">Discover</a>
+    <a href="games.html" class="nav-link">All Games</a>
+
+    <!-- Search: platform dropdown menu -->
+    <div class="platform-menu">
+      <span class="platform-trigger">Platforms ▾</span>
+      <div class="platform-dropdown">
+        <a href="games.html?platform=PC"            class="platform-item">PC <span class="platform-count" id="pcCount">–</span></a>
+        <a href="games.html?platform=PS5"           class="platform-item">PlayStation 5 <span class="platform-count" id="ps5Count">–</span></a>
+        <a href="games.html?platform=PS4"           class="platform-item">PlayStation 4 <span class="platform-count" id="ps4Count">–</span></a>
+        <a href="games.html?platform=Xbox Series X/S" class="platform-item">Xbox Series X/S <span class="platform-count" id="xboxsCount">–</span></a>
+        <a href="games.html?platform=Xbox One"      class="platform-item">Xbox One <span class="platform-count" id="xboxCount">–</span></a>
+        <a href="games.html?platform=Switch"        class="platform-item">Switch <span class="platform-count" id="switchCount">–</span></a>
+        <div class="platform-divider"></div>
+        <a href="games.html" class="platform-item active">All Platforms</a>
+      </div>
+    </div>
+
+    <a href="about.html" class="nav-link">About</a>
+  </nav>
+
+  <div class="nav-right">
+    <span class="live-time" id="liveTime">--:--</span>
+    <button class="icon-btn" id="themeToggle" title="Toggle theme">☾</button>
+
+    <!-- Search: login link or profile link -->
+    <a href="login.html" class="nav-login-link" id="navLoginLink">Log In</a>
+    <a href="profile.html" class="nav-profile" id="navProfile" style="display:none">
+      <div class="nav-avatar" id="navAvatarImg"></div>
+      <span class="nav-username" id="navUsernameText"></span>
+    </a>
+
+    <button class="wishlist-btn" id="wishlistBtn">
+      ♡ Wishlist <span class="wishlist-count" id="wishlistCount">0</span>
+    </button>
+
+    <div class="search-wrap">
+      <input class="search-input" id="searchField" type="text" placeholder="Search games…" autocomplete="off">
+      <div class="search-suggestions" id="suggestionsBox"></div>
+    </div>
+  </div>
+</header>
+
+<!-- Search: hero section, page intro -->
+<section class="hero">
+  <p class="hero-eyebrow">Meta scores, player voices, sharper picks</p>
+  <h1 class="hero-title">Find Your Next<br><span>Favorite Game</span></h1>
+  <p class="hero-desc">Browse curated games, compare scores, and read community reviews before you press play.</p>
+  <div class="hero-btns">
+    <a href="games.html" class="btn btn-primary">Explore All Games</a>
+    <a href="about.html" class="btn btn-ghost">About MetaPlay</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num" id="heroTotal"></span><span class="stat-label">Games</span></div>
+    <div class="stat"><span class="stat-num"></span><span class="stat-label">Platforms</span></div>
+    <div class="stat"><span class="stat-num"></span><span class="stat-label">Reviews</span></div>
+  </div>
+</section>
+
+<!-- Search: trending games section -->
+<section class="section" id="trending">
+  <div class="section-header">
+    <h2 class="section-title">Trending <span>Now</span></h2>
+    <a href="games.html" class="section-link">See all →</a>
+  </div>
+  <div class="game-grid" id="trendingGrid"></div>
+</section>
+
+<!-- Search: game of the week section -->
+<section class="section" id="game-of-week">
+  <div class="section-header">
+    <h2 class="section-title">Game of the <span>Week</span></h2>
+  </div>
+  <div class="gotw-card reveal" id="gotwCard"></div>
+</section>
+
+<!-- Search: top rated games section -->
+<section class="section" id="top-rated">
+  <div class="section-header">
+    <h2 class="section-title">Top <span>Rated</span></h2>
+    <a href="games.html" class="section-link">View all →</a>
+  </div>
+  <div class="game-grid" id="topRatedGrid"></div>
+</section>
+
+<!-- Search: footer -->
+<footer class="footer">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <div class="footer-links">
+    <a href="index.html">Discover</a>
+    <a href="games.html">All Games</a>
+    <a href="about.html">About</a>
+    <a href="wishlist.html">Wishlist</a>
+  </div>
+  <span class="footer-copy">© 2026 MetaPlay. All rights reserved.</span>
+</footer>
+
+<script type="module" src="js/pages/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/*
+  Wishlist page styles.
+  Search keywords: wishlist page, saved games, wishlist grid.
+*/
+
+/* Search: wishlist page layout */
+.wishlist-header { padding: 100px clamp(24px,5vw,64px) 36px; }
+.wishlist-header h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 800; }
+
+/* Search: wishlist two column layout */
+#wishlistGrid.game-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 900px) {
+  #wishlistGrid.game-grid { grid-template-columns: 1fr; }
+}

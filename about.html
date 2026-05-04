@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <title>About - MetaPlay</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/about.css">
+</head>
+<body>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- Search: navbar, top navigation -->
+<header class="navbar">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Discover</a>
+    <a href="games.html" class="nav-link">All Games</a>
+    <div class="platform-menu">
+      <span class="platform-trigger">Platforms ▾</span>
+      <div class="platform-dropdown">
+        <a href="games.html?platform=PC"            class="platform-item">PC</a>
+        <a href="games.html?platform=PS5"           class="platform-item">PlayStation 5</a>
+        <a href="games.html?platform=PS4"           class="platform-item">PlayStation 4</a>
+        <a href="games.html?platform=Xbox Series X/S" class="platform-item">Xbox Series X/S</a>
+        <a href="games.html?platform=Xbox One"      class="platform-item">Xbox One</a>
+        <a href="games.html?platform=Switch"        class="platform-item">Switch</a>
+        <div class="platform-divider"></div>
+        <a href="games.html" class="platform-item">All Platforms</a>
+      </div>
+    </div>
+    <a href="about.html" class="nav-link active">About</a>
+  </nav>
+  <div class="nav-right">
+    <span class="live-time" id="liveTime">--:--</span>
+    <button class="icon-btn" id="themeToggle">☾</button>
+    <a href="login.html" class="nav-login-link" id="navLoginLink">Log In</a>
+    <a href="profile.html" class="nav-profile" id="navProfile" style="display:none">
+      <div class="nav-avatar" id="navAvatarImg"></div>
+      <span class="nav-username" id="navUsernameText"></span>
+    </a>
+    <div class="search-wrap">
+      <input class="search-input" id="searchField" type="text" placeholder="Search games…" autocomplete="off">
+      <div class="search-suggestions" id="suggestionsBox"></div>
+    </div>
+  </div>
+</header>
+
+<!-- Search: hero section, page intro -->
+<section class="about-hero">
+  <p style="font-size:.8rem;font-weight:600;color:var(--accent);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;" class="reveal">
+    Gaming Discovery Platform
+  </p>
+  <h1 class="hero-title reveal" style="font-size:clamp(2rem,5vw,3.5rem)">
+    About <span>MetaPlay</span>
+  </h1>
+</section>
+
+<!-- Search: main description -->
+<div class="about-content reveal">
+  <p class="about-lead">
+    MetaPlay is your go-to platform for discovering games that are truly worth your time.
+    We bring together expert critic reviews, community scores, and rich game metadata
+    - all in one clean, fast, and beautiful interface.
+  </p>
+  <p class="about-lead" style="font-size:1rem;">
+    Whether you're looking for the next masterpiece RPG, a chill indie platformer,
+    or the top-rated competitive shooter - MetaPlay helps you cut through the noise
+    and find games that match your taste. No ads, no paid placements. Just honest scores.
+  </p>
+</div>
+
+<!-- Search: feature cards -->
+<div class="about-grid">
+  <div class="about-card reveal">
+    <h3>What is MetaPlay?</h3>
+    <p>A gaming discovery platform that aggregates critic reviews and community ratings into a single Metascore. Built for gamers who want to find quality games, fast.</p>
+  </div>
+  <div class="about-card reveal">
+    <h3>Our Mission</h3>
+    <p>To make game discovery transparent, honest, and enjoyable. We believe every gamer deserves to know what they're getting into before spending their time or money.</p>
+  </div>
+  <div class="about-card reveal">
+    <h3>For Every Gamer</h3>
+    <p>From hardcore Souls-like fans to casual mobile gamers - MetaPlay covers all genres and platforms. Our database spans decades of gaming history.</p>
+  </div>
+  <div class="about-card reveal">
+    <h3>Technologies Used</h3>
+    <p>Built entirely with HTML5, CSS3, and Vanilla JavaScript - no frameworks. Uses localStorage for wishlists, reviews, and user accounts. Fully responsive.</p>
+  </div>
+  <div class="about-card reveal">
+    <h3>Key Features</h3>
+    <p>Platform filtering, real-time search, game detail pages with trailers, critic and user reviews, personal wishlist, dark/light mode, and user accounts.</p>
+  </div>
+</div>
+
+<!-- Search: stats section -->
+<div class="stats-row reveal">
+  <div class="stat"><span class="stat-num" id="gameCountStat">35+</span><span class="stat-label">Games</span></div>
+  <div class="stat"><span class="stat-num">6</span><span class="stat-label">Platforms</span></div>
+  <div class="stat"><span class="stat-num">8</span><span class="stat-label">Pages</span></div>
+  <div class="stat"><span class="stat-num">0</span><span class="stat-label">Frameworks</span></div>
+</div>
+
+<!-- Search: two column info section -->
+<div class="about-bottom-grid reveal">
+
+  <!-- Search: academic context -->
+  <div class="about-card" style="align-self:start;">
+    <h3>Academic Context</h3>
+    <p style="line-height:2;">
+      <strong style="color:var(--text)">Course:</strong> Web Design - Semester 2<br>
+      <strong style="color:var(--text)">Lecturer:</strong> Meylani Utari, S.SI., M.Kom.<br>
+      <strong style="color:var(--text)">Program:</strong> Computerized Accounting<br>
+      <strong style="color:var(--text)">University:</strong> Sriwijaya University<br>
+      <strong style="color:var(--text)">Year:</strong> Semester 2 (Even) 2025/2026
+    </p>
+  </div>
+
+  <!-- Search: student profile -->
+  <div class="about-card" style="text-align:center;align-self:start;">
+    <div style="width:64px;height:64px;border-radius:50%;background:var(--accent);color:#fff;font-size:1.5rem;font-weight:800;display:grid;place-items:center;margin:0 auto 16px;">R</div>
+    <div style="font-size:1.1rem;font-weight:700;color:var(--text)">Rizky Ahmad Arief</div>
+    <div style="font-size:.85rem;color:var(--muted);margin-top:4px">NIM: 09020182529006 · Class: KA2B</div>
+    <div style="font-size:.8rem;color:var(--muted);margin-top:4px">Semester 2 (Even) 2025/2026</div>
+  </div>
+
+</div>
+
+<!-- Search: footer -->
+<footer class="footer">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <div class="footer-links">
+    <a href="index.html">Discover</a>
+    <a href="games.html">All Games</a>
+    <a href="about.html">About</a>
+  </div>
+  <span class="footer-copy">© 2026 MetaPlay. All rights reserved.</span>
+</footer>
+
+<script type="module" src="js/pages/about.js"></script>
+</body>
+</html>

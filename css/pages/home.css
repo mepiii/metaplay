@@ -1,0 +1,102 @@
+/*
+  Home page styles.
+  Search keywords: home page, hero section, hero stats, game of the week, top rated.
+*/
+
+/* Search: hero section, homepage banner */
+.hero {
+  min-height: 84vh;
+  margin: 88px clamp(16px,4vw,48px) 40px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 96px 24px 72px;
+  background: linear-gradient(135deg, rgba(124,58,237,.18), rgba(6,182,212,.08));
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  border: 1px solid rgba(124,58,237,.18);
+  border-radius: 44px;
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 18px 48px rgba(2,6,23,.24);
+  pointer-events: none;
+}
+
+[data-theme="light"] .hero {
+  background: linear-gradient(135deg, rgba(124,58,237,.10), rgba(6,182,212,.10));
+}
+[data-theme="light"] .hero::before {
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 18px 42px rgba(76,29,149,.12);
+}
+
+.hero > * { position: relative; z-index: 1; }
+
+.hero-eyebrow {
+  font-size: .78rem; font-weight: 800; color: var(--accent-2);
+  letter-spacing: 3.2px; text-transform: uppercase;
+  margin-bottom: 18px; animation: slideUp .6s ease forwards;
+  padding: 7px 14px; border: 1px solid var(--border); border-radius: 999px;
+  background: rgba(124,58,237,.12);
+}
+.hero-title {
+  font-size: clamp(3.1rem,7.4vw,6.3rem);
+  font-weight: 800; line-height: 1.02; letter-spacing: -3px;
+  color: var(--text); margin-bottom: 22px;
+  animation: slideUp .6s ease .1s both;
+  text-shadow: 0 0 70px rgba(124,58,237,.30);
+}
+.hero-title span {
+  background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 55%, #C4B5FD 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-desc {
+  font-size: clamp(1rem,2vw,1.18rem); color: var(--muted);
+  max-width: 600px; margin-bottom: 36px;
+  animation: slideUp .6s ease .2s both;
+}
+.hero-btns {
+  display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  margin-bottom: 56px; animation: slideUp .6s ease .3s both;
+}
+.hero-stats { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: slideUp .6s ease .4s both; }
+.stat {
+  min-width: 118px; display: flex; flex-direction: column; align-items: center;
+  padding: 14px 18px; border: 1px solid var(--border); border-radius: 20px;
+  background: linear-gradient(145deg, rgba(16,24,39,.70), rgba(23,32,51,.52));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+[data-theme="light"] .stat { background: rgba(255,255,255,.72); box-shadow: 0 10px 28px rgba(76,29,149,.10); }
+.stat-num   { font-size: 2rem; font-weight: 800; color: var(--text); line-height: 1; }
+.stat-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+/* Search: game of the week card */
+.gotw-card {
+  display: flex; gap: 32px;
+  background: linear-gradient(135deg, var(--card) 0%, var(--card-2) 100%);
+  border: 1px solid rgba(139,92,246,.28);
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: 0 8px 48px rgba(0,0,0,.42), 0 0 70px rgba(139,92,246,.07);
+}
+[data-theme="light"] .gotw-card {
+  background: linear-gradient(135deg, rgba(240,248,255,.97) 0%, rgba(222,234,250,.95) 100%);
+  box-shadow: 0 8px 40px rgba(139,92,246,.12);
+}
+.gotw-cover      { flex-shrink: 0; width: 260px; }
+.gotw-cover img  { width: 100%; height: 100%; object-fit: cover; }
+.gotw-info       { padding: 32px 32px 32px 0; display: flex; flex-direction: column; gap: 12px; }
+.gotw-badge      { font-size: .72rem; font-weight: 700; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
+.gotw-title      { font-size: clamp(1.4rem,3vw,2rem); font-weight: 800; color: var(--text); line-height: 1.1; }
+.gotw-meta       { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.gotw-meta-item  { font-size: .8rem; color: var(--muted); }
+.gotw-meta-item span { color: var(--text); font-weight: 600; }
+.gotw-desc       { font-size: .9rem; color: var(--muted); line-height: 1.6; max-width: 520px; }
+.gotw-actions    { display: flex; align-items: center; gap: 20px; margin-top: 8px; }
+.gotw-score      { font-size: 2.2rem; font-weight: 800; line-height: 1; }
+.gotw-score small { font-size: .8rem; color: var(--muted); font-weight: 500; }
+
+/* Search: score color helpers */
+.high { color: var(--high); }
+.mid  { color: var(--mid); }
+.low  { color: var(--low); }

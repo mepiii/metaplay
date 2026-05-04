@@ -1,0 +1,46 @@
+/*
+  Reviews page, review page styles.
+  Search keywords: reviews page, review page, all reviews page, review page, review card, sort reviews, review grid.
+*/
+
+/* Search: reviews page, review page layout */
+.page-header { padding: 96px clamp(16px,4vw,48px) 32px; border-bottom: 1px solid var(--border); }
+.page-header h1 { font-size: clamp(1.5rem,4vw,2.5rem); font-weight: 800; }
+.breadcrumb  { font-size: .8rem; color: var(--muted); margin-top: 6px; }
+.breadcrumb a { color: var(--accent); }
+.breadcrumb a:hover { color: var(--accent-2); }
+.review-count { font-size: .875rem; color: var(--muted); margin-top: 4px; }
+.meta-badge  { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.meta-label-small { font-size: .72rem; color: var(--muted); }
+.badge-score { font-size: 1.5rem; font-weight: 800; }
+
+.reviews-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 20px clamp(16px,4vw,48px); border-bottom: 1px solid var(--border); }
+.sort-select { padding: 8px 14px; border-radius: 8px; border: 1px solid var(--border); background: var(--card-2); color: var(--text); font-size: .85rem; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(320px,1fr)); gap: 16px; padding: 28px clamp(16px,4vw,48px); }
+
+.review-card {
+  background: linear-gradient(145deg, rgba(31,41,55,.94), rgba(17,24,39,.88));
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 16px;
+  box-shadow: 0 12px 32px rgba(9,10,26,.24), inset 0 1px 0 rgba(255,255,255,.04);
+}
+[data-theme="light"] .review-card { background: rgba(255,255,255,.86); box-shadow: 0 10px 26px rgba(76,29,149,.10); }
+.review-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.review-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; font-size: .72rem; color: var(--muted); }
+.reviewer-info { display: flex; align-items: center; gap: 10px; }
+.reviewer-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--card); color: var(--text);
+  font-weight: 700; font-size: .9rem;
+  display: grid; place-items: center; flex-shrink: 0;
+}
+.reviewer-avatar.high { background-color: rgba(78,204,163,.15); color: var(--high); }
+.reviewer-avatar.mid { background-color: rgba(232,184,75,.15); color: var(--mid); }
+.reviewer-avatar.low { background-color: rgba(224,92,92,.15); color: var(--low); }
+.reviewer-name { font-size: .875rem; font-weight: 600; color: var(--text); }
+.reviewer-date { font-size: .72rem; color: var(--muted); }
+.review-score { font-size: 1.1rem; font-weight: 800; }
+.review-text { font-size: .875rem; color: var(--muted); line-height: 1.6; overflow-wrap: break-word; word-break: break-word; }
+.expand-btn { font-size: .8rem; color: var(--accent-2); font-weight: 700; transition: var(--t); padding: 4px 0; }
+.expand-btn:hover { color: var(--surface); transform: translateX(2px); }

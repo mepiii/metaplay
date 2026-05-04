@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!--
+    Search: reviews page, review page, all reviews page, review page.
+    This page reads ?id=gameId to show reviews for one game.
+  -->
+  <title>Reviews - MetaPlay</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/reviews.css">
+</head>
+<body>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<header class="navbar">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Discover</a>
+    <a href="games.html" class="nav-link">All Games</a>
+    <a href="about.html" class="nav-link">About</a>
+  </nav>
+  <div class="nav-right">
+    <span class="live-time" id="liveTime">--:--</span>
+    <button class="icon-btn" id="themeToggle">☾</button>
+    <a href="login.html" class="nav-login-link" id="navLoginLink">Log In</a>
+    <a href="profile.html" class="nav-profile" id="navProfile" style="display:none">
+      <div class="nav-avatar" id="navAvatarImg"></div>
+      <span class="nav-username" id="navUsernameText"></span>
+    </a>
+    <div class="search-wrap">
+      <input class="search-input" id="searchField" type="text" placeholder="Search games…" autocomplete="off">
+      <div class="search-suggestions" id="suggestionsBox"></div>
+    </div>
+  </div>
+</header>
+
+<div class="page-header">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div>
+      <h1 id="gameTitle">Loading…</h1>
+      <div class="breadcrumb" id="breadcrumb"></div>
+      <p class="review-count" id="reviewCount">0 reviews</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div class="meta-badge" id="metaBadge"></div>
+      <a href="#" id="backButton" class="btn btn-ghost" style="font-size:.875rem">← Back to Game</a>
+    </div>
+  </div>
+</div>
+
+<div class="reviews-controls">
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <button class="tab active" data-filter="all">All Reviews</button>
+    <button class="tab" data-filter="positive">Positive (7+)</button>
+    <button class="tab" data-filter="negative">Negative (&lt;7)</button>
+  </div>
+  <select class="sort-select" id="sortSelect">
+    <option value="newest">Newest First</option>
+    <option value="highest">Highest Score</option>
+    <option value="lowest">Lowest Score</option>
+  </select>
+</div>
+
+<div class="reviews-grid" id="reviewsList"></div>
+
+<div class="empty-state" id="emptyState" style="display:none">
+  <div class="empty-icon">📝</div>
+  <h3 class="empty-title">No Reviews Yet</h3>
+  <p class="empty-text">Be the first to share your experience!</p>
+  <a href="#" id="writeReviewLink" class="btn btn-primary">Write a Review</a>
+</div>
+
+<footer class="footer" style="margin-top:40px">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <div class="footer-links">
+    <a href="index.html">Discover</a>
+    <a href="games.html">All Games</a>
+    <a href="about.html">About</a>
+  </div>
+  <span class="footer-copy">© 2026 MetaPlay. All rights reserved.</span>
+</footer>
+
+<div class="viewer-overlay" id="reviewViewerOverlay">
+  <div class="viewer-panel">
+    <button class="viewer-close" id="closeViewerBtn">×</button>
+    <div class="viewer-header">
+      <div class="viewer-score" id="viewerScore"></div>
+      <div>
+        <div class="viewer-source" id="viewerSource"></div>
+        <div class="viewer-date" id="viewerDate"></div>
+      </div>
+    </div>
+    <p class="viewer-text" id="viewerText"></p>
+  </div>
+</div>
+
+<script type="module" src="js/pages/reviewsPage.js"></script>
+</body>
+</html>

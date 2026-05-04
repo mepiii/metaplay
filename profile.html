@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <title>Profile - MetaPlay</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/profile.css">
+</head>
+<body>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<header class="navbar">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <nav class="nav-links">
+    <a href="index.html" class="nav-link">Discover</a>
+    <a href="games.html" class="nav-link">All Games</a>
+    <a href="about.html" class="nav-link">About</a>
+  </nav>
+  <div class="nav-right">
+    <span class="live-time" id="liveTime">--:--</span>
+    <button class="icon-btn" id="themeToggle">☾</button>
+    <a href="login.html" class="nav-login-link" id="navLoginLink">Log In</a>
+    <a href="profile.html" class="nav-profile" id="navProfile" style="display:none">
+      <div class="nav-avatar" id="navAvatarImg"></div>
+      <span class="nav-username" id="navUsernameText"></span>
+    </a>
+    <button class="wishlist-btn" id="wishlistBtn">
+      ♡ Wishlist <span class="wishlist-count" id="wishlistCount">0</span>
+    </button>
+    <div class="search-wrap">
+      <input class="search-input" id="searchField" type="text" placeholder="Search games…" autocomplete="off">
+      <div class="search-suggestions" id="suggestionsBox"></div>
+    </div>
+  </div>
+</header>
+
+<div class="profile-page">
+
+  <!-- Search: profile header -->
+  <div class="profile-hero">
+    <div
+      class="profile-avatar"
+      id="profileAvatar"
+      id2="profileAvatarClickable"
+      title="Click to change photo"
+      style="cursor:pointer">?</div>
+    <input type="file" id="photoUploadInput" accept="image/*" style="display:none">
+
+    <div>
+      <h1 class="profile-name" id="profileName">Loading…</h1>
+      <p class="profile-since" id="profileSince"></p>
+
+      <!-- Search: edit username -->
+      <div style="display:flex;align-items:center;gap:8px;margin-top:8px;flex-wrap:wrap;">
+        <button class="edit-toggle-btn" id="editUsernameToggle">Edit Username</button>
+      </div>
+      <div class="edit-username-wrap" id="editUsernameArea" style="display:none;margin-top:10px;">
+        <input class="edit-username-input" id="newUsernameInput" type="text" placeholder="New username…">
+        <button class="btn btn-primary" id="saveUsernameBtn" style="font-size:.82rem;padding:8px 18px;">Save</button>
+        <span id="usernameError" style="font-size:.78rem;color:var(--low);display:none;"></span>
+      </div>
+
+      <div class="profile-stats">
+        <div class="profile-stat">
+          <div class="num" id="profileReviewCount">0</div>
+          <div class="lbl">Reviews</div>
+        </div>
+        <div class="profile-stat">
+          <div class="num" id="profileWishlistCount">0</div>
+          <div class="lbl">Wishlisted</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-left:auto;display:flex;flex-direction:column;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+      <a href="wishlist.html" class="btn btn-ghost" style="font-size:.875rem">View Wishlist</a>
+      <button class="logout-btn" id="logoutBtn">Log Out</button>
+    </div>
+  </div>
+
+  <!-- User's reviews -->
+  <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:20px;color:var(--text)">
+    My Reviews
+  </h2>
+  <div class="profile-reviews-grid" id="profileReviews"></div>
+
+</div>
+
+<footer class="footer">
+  <a class="nav-logo" href="index.html">Meta<span>Play</span></a>
+  <div class="footer-links">
+    <a href="index.html">Discover</a>
+    <a href="games.html">All Games</a>
+    <a href="about.html">About</a>
+  </div>
+  <span class="footer-copy">© 2026 MetaPlay. All rights reserved.</span>
+</footer>
+
+<script type="module" src="js/pages/profile.js"></script>
+</body>
+</html>
